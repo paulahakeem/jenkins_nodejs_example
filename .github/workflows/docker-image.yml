@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker login -u paulahakeem -p ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
            docker build . --file Dockerfile --tag paulahakeem/jenkins_iti:v2
            docker push paulahakeem/jenkins_iti:v2
       
